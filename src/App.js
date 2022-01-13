@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Row from "./components/Row";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [playing, setPlaying] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <Row playing={playing} name="bd" soundFile="./kick.wav" />
+        <Row playing={playing} name="sn" soundFile="./snare.wav" />
+        <Row playing={playing} name="hh" soundFile="./hihat.wav" />
+      </div>
+      <button
+        onClick={() => {
+          setPlaying(!playing);
+        }}
+      >
+        {playing ? "playing" : "paused"}
+      </button>
+    </>
   );
 }
 
