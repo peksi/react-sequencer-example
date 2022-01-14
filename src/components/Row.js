@@ -21,7 +21,13 @@ const Row = (props) => {
 
   return (
     <div style={{ display: "flex" }}>
-      Active step {playingStep}
+      <div
+        style={{
+          width: "3rem",
+        }}
+      >
+        {props.name}
+      </div>
       {steps.map((step, index) => {
         return (
           <Switch

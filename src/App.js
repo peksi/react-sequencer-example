@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <div className="App">
-        <Row playing={playing} name="bd" soundFile="./kick.wav" />
-        <Row playing={playing} name="sn" soundFile="./snare.wav" />
-        <Row playing={playing} name="hh" soundFile="./hihat.wav" />
+        <Row playing={playing} name="bass" soundFile="./kick.wav" />
+        <Row playing={playing} name="snare" soundFile="./snare.wav" />
+        <Row playing={playing} name="blop" soundFile="./hihat.wav" />
       </div>
       <button
         onClick={() => {
