@@ -19,17 +19,17 @@ const Switch = (props) => {
       style={{
         width: "40px",
         height: "40px",
-        background: props.playing ? "yellow" : "",
       }}
     >
       <div
         onClick={() => setActive(!active)}
         style={{
-          width: "30px",
-          height: "30px",
-          margin: "5px",
+          transitionDuration: "100ms",
+          width: props.playing ? "30px" : "10px",
+          height: props.playing ? "30px" : "10px",
+          margin: props.playing ? "5px" : "15px",
           borderRadius: "15px",
-          background: active ? "green" : "red",
+          background: active ? "magenta" : "darkgray",
         }}
       ></div>
     </div>
