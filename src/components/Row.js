@@ -2,22 +2,20 @@ import { useEffect, useState } from "react";
 import Switch from "./Switch";
 
 const Row = (props) => {
-  const steps = [true, false, false, false, true, false, false, false];
+  const stepcount = 16;
 
-  console.log({ steps });
-
+  const steps = new Array(stepcount).fill(false);
   const [playingStep, setPlayingStep] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (props.playing) {
-        console.log("This will be called every 2 seconds");
-        setPlayingStep((playingStep + 1) % 8);
+        setPlayingStep((playingStep + 1) % stepcount);
       }
-    }, 500);
+    }, (60 / props.tempo) * 1000);
 
     return () => clearInterval(interval);
-  }, [playingStep, props.playing]);
+  }, [playingStep, props.playing, props.tempo]);
 
   return (
     <div style={{ display: "flex" }}>
