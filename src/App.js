@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Row playing={playing} name="bass" soundFile="./kick.wav" />
         <Row playing={playing} name="snare" soundFile="./snare.wav" />
-        <Row playing={playing} name="blop" soundFile="./hihat.wav" />
+        <Row playing={playing} name="hihat" soundFile="./hh.wav" />
       </div>
       <button
         onClick={() => {
