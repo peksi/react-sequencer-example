@@ -1,13 +1,14 @@
-import Row from "./components/Row";
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
+
+import Row from "./components/Row";
 
 function App() {
   const [playing, setPlaying] = useState(false);
   const [tempo, setTempo] = useState(120);
 
   return (
-    <>
+    <div className="container">
       <div className="App">
         <Row
           playing={playing}
@@ -33,7 +34,7 @@ function App() {
           setPlaying(!playing);
         }}
       >
-        {playing ? "playing" : "paused"}
+        {playing ? "⏸️" : "▶️"}
       </button>
       &nbsp;Tempo:
       <input
@@ -42,7 +43,7 @@ function App() {
         }}
         placeholder="Set tempo"
       ></input>
-    </>
+    </div>
   );
 }
 
